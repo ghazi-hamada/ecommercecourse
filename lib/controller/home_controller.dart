@@ -3,22 +3,23 @@ import 'package:ecommercecourse/core/class/status_request.dart';
 import 'package:ecommercecourse/core/function/handlingData_controller.dart';
 import 'package:ecommercecourse/core/services/servises.dart';
 import 'package:ecommercecourse/data/datasource/remote/home_data.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class HomeController extends GetxController {
   initialData();
   getData();
   goToItems({
-   required List categories,
-   required int index,
-   required String categoriesid,
+    required List categories,
+    required int index,
+    required String categoriesid,
   });
 }
 
 class HomeControllerImp extends HomeController {
   StatusRequest statusRequest = StatusRequest.none;
   HomeData homeData = HomeData(Get.find());
-
+   bool lang =false;
   // List data = [];
   List categories = [];
   List items = [];
@@ -30,6 +31,7 @@ class HomeControllerImp extends HomeController {
   initialData() {
     username = myServices.sharedPreferences.getString('username');
     id = myServices.sharedPreferences.getString('id');
+   lang= myServices.sharedPreferences.getString("lang") == "ar";
     update();
   }
 
@@ -61,9 +63,9 @@ class HomeControllerImp extends HomeController {
 
   @override
   goToItems({
-   required List categories,
-   required int index,
-   required String categoriesid,
+    required List categories,
+    required int index,
+    required String categoriesid,
   }) {
     Get.toNamed(AppRoutes.kItems, arguments: {
       'categories': categories,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constant/color.dart';
+import '../../../core/constant/color.dart';
 
 class TextSingUpAndIn extends StatelessWidget {
   const TextSingUpAndIn({

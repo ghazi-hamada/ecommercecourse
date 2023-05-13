@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/controller/items_controller.dart';
+import 'package:ecommercecourse/core/class/translate_database.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -71,7 +72,7 @@ class _Categorise extends StatelessWidget {
                       ),
                     ),
               child: Text(
-                "${categoriesModel.categoriesName}",
+                "${translateDatabase(arabic: categoriesModel.categoriesNameAr!, english: categoriesModel.categoriesName!)}",
                 style: TextStyle(
                     fontSize: 20,
                     color: index == controller.index

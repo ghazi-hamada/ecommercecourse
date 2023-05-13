@@ -23,7 +23,7 @@ class CustumAppbar extends StatelessWidget {
               decoration: InputDecoration(
                   hintText: titleAppBar,
                   border: InputBorder.none,
-                  prefixIcon: Icon(Icons.search)),
+                  prefixIcon: const Icon(Icons.search)),
             ),
           ),
         ),

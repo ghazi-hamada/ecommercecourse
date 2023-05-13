@@ -59,6 +59,13 @@ class MyTranslations extends Translations {
           "45": "تم اعادة تعيين كلمة المرور بنجاح",
           "46": "تهانينا",
           "47": "الذهاب لتسجيل الدخول",
+          "48": "الاصناف",
+          "49": "المنتجات",
+          "50": "تقدم لك",
+          "51":"الرئيسية",
+          "52":"المفضلة",
+          "53":"شخص",
+          "54":"الاعدادات",
         },
 
         //translation Englash
@@ -119,6 +126,13 @@ class MyTranslations extends Translations {
           "45": "Password has been reset successfully",
           "46": "congratulations",
           "47": "Go To Login",
+          "48": "Categories",
+          "49": "Product for you",
+          "50": "Offer for you",
+          "51":"Home",
+          "52":"favorite",
+          "53":"person",
+          "54":"setting",
         },
       };
 }

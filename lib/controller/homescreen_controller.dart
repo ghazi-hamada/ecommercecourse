@@ -31,10 +31,10 @@ class HomescreenControllerImp extends HomescreenController {
       Icons.settings,
     ],
     'text': [
-      'Home',
-      'favorite',
-      'person',
-      'settings',
+      '51'.tr,
+      '52'.tr,
+      '53'.tr,
+      '54'.tr,
     ]
   };
 

@@ -33,15 +33,15 @@ class HomePage extends StatelessWidget {
                 body: "Cashback 20%",
               ),
               // listview for categories
-              const CustomTitleHome(title: "Categories"),
+              CustomTitleHome(title: "48".tr),
               const ListCategoriesHome(),
               // title for product
-              const CustomTitleHome(title: "Product for you"),
+              CustomTitleHome(title: "49".tr),
               const SizedBox(height: 10),
               // listview for product
               const ListItemsHome(),
               // title for product
-              const CustomTitleHome(title: "Offer for you"),
+              CustomTitleHome(title: "50".tr),
               // listview for product
               const ListItemsHome(),
             ],

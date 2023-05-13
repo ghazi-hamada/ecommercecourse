@@ -1,4 +1,5 @@
 import 'package:ecommercecourse/controller/items_controller.dart';
+import 'package:ecommercecourse/core/class/translate_database.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
 import 'package:ecommercecourse/data/model/items_model.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,7 @@ class CustomListItems extends GetView<ItemsControllerImp> {
               ),
               const SizedBox(height: 10),
               Text(
-                "${itemsModel.itemsName}",
+                "${translateDatabase(arabic: itemsModel.itemsNameAr!, english: itemsModel.itemsName!)}",
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
                   color: AppColor.black,

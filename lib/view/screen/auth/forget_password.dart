@@ -2,7 +2,7 @@ import 'package:ecommercecourse/controller/forgetPassword/forgetpassword_control
 import 'package:ecommercecourse/core/class/handling_data_view.dart';
 import 'package:ecommercecourse/core/class/status_request.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/view/screen/pages_navbar/auth/TextFormField.dart';
+import 'package:ecommercecourse/view/widget/auth/TextFormField.dart';
 import 'package:ecommercecourse/view/widget/onBoarding/custom_button.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';

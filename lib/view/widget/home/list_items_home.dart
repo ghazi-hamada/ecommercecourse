@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommercecourse/controller/home_controller.dart';
+import 'package:ecommercecourse/core/class/translate_database.dart';
 import 'package:ecommercecourse/data/model/items_model.dart';
 import 'package:ecommercecourse/link_api.dart';
 import 'package:flutter/material.dart';
@@ -79,7 +80,9 @@ class _Items extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "${itemsModel.itemsName}",
+                  translateDatabase(
+                      english: "${itemsModel.itemsName}",
+                      arabic: "${itemsModel.itemsNameAr}"),
                   style: const TextStyle(
                       overflow: TextOverflow.ellipsis,
                       color: Colors.white,

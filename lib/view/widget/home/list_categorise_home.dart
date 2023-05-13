@@ -1,3 +1,4 @@
+import 'package:ecommercecourse/core/class/translate_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -59,16 +60,18 @@ class _Categorise extends GetView<HomeControllerImp> {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             height: 65,
             width: 65,
-            child: SvgPicture.network(
-                "${AppLink.imagecategories}/${categoriesModel.categoriesImage}",
-                color: AppColor.secoundColor),
+            child:
+                SvgPicture.network(categoryImage, color: AppColor.secoundColor),
           ),
           Text(
-            "${categoriesModel.categoriesName}",
+            "${translateDatabase(arabic: categoriesModel.categoriesNameAr!, english: categoriesModel.categoriesName!)}",
             style: const TextStyle(fontSize: 13, color: AppColor.black),
           )
         ],
       ),
     );
   }
+
+  String get categoryImage =>
+      "${AppLink.imagecategories}/${categoriesModel.categoriesImage}";
 }
