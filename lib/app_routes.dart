@@ -11,6 +11,7 @@ import 'package:ecommercecourse/view/screen/items.dart';
 import 'package:ecommercecourse/view/screen/pages_navbar/navbar_botton.dart';
 import 'package:ecommercecourse/view/screen/language.dart';
 import 'package:ecommercecourse/view/screen/onboarding.dart';
+import 'package:ecommercecourse/view/screen/product_details.dart';
 import 'package:get/get.dart';
 
 abstract class AppRoutes {
@@ -27,6 +28,7 @@ abstract class AppRoutes {
   static const String knavbarButton = '/home';
   static const String kLanguage = '/';
   static const String kItems = '/items';
+  static const String kProductDetails = '/productDetails';
 
   // this is the routes list
   static List<GetPage<dynamic>> getPages = [
@@ -47,5 +49,7 @@ abstract class AppRoutes {
         name: kSuccessResetPassword, page: () => const SuccessResetPassword()),
     GetPage(name: knavbarButton, page: () => const NavbarButton()),
     GetPage(name: kItems, page: () => const Items()),
+    GetPage(name: kProductDetails, page: () => const ProductDetails()),
+
   ];
 }

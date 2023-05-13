@@ -9,7 +9,7 @@ import 'package:get/get.dart';
 
 class CustomListItems extends GetView<ItemsControllerImp> {
   final ItemsModel itemsModel;
-  const CustomListItems({
+  const CustomListItems( {
     super.key,
     required this.itemsModel,
   });
@@ -17,7 +17,7 @@ class CustomListItems extends GetView<ItemsControllerImp> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () => controller.goProductDetails(itemsModel),
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(10.00),

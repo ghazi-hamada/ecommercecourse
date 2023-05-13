@@ -1,16 +1,18 @@
+import 'package:ecommercecourse/app_routes.dart';
 import 'package:ecommercecourse/core/class/status_request.dart';
 import 'package:ecommercecourse/core/function/handlingData_controller.dart';
 import 'package:ecommercecourse/data/datasource/remote/items_data.dart';
+import 'package:ecommercecourse/data/model/items_model.dart';
 import 'package:get/get.dart';
 
 abstract class ItemsController extends GetxController {
+  //functions
   initialData();
   changeIndex(int index, String id);
   getItems(String categoriesid);
   changLike();
-}
-
-class ItemsControllerImp extends ItemsController {
+  goProductDetails(ItemsModel itemsModel);
+  //parameters
   bool isLike = false;
   List categories = [];
   List items = [];
@@ -18,7 +20,9 @@ class ItemsControllerImp extends ItemsController {
   int? index;
   ItemsData itemsDate = ItemsData(Get.find());
   StatusRequest statusRequest = StatusRequest.none;
+}
 
+class ItemsControllerImp extends ItemsController {
   @override
   initialData() {
     categories = Get.arguments['categories'];
@@ -63,5 +67,11 @@ class ItemsControllerImp extends ItemsController {
   changLike() {
     isLike = !isLike;
     update();
+  }
+
+  @override
+  goProductDetails(ItemsModel itemsModel) {
+    Get.toNamed(AppRoutes.kProductDetails,
+        arguments: {'itemsmodel': itemsModel});
   }
 }
