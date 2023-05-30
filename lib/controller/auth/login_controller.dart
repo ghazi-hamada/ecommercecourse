@@ -12,9 +12,6 @@ abstract class LoginController extends GetxController {
   goToSignUp();
   goToForgetPassword();
   showPassword();
-}
-
-class LoginControllerImp extends LoginController {
   late TextEditingController email;
   late TextEditingController password;
   GlobalKey<FormState> formstate = GlobalKey<FormState>();
@@ -22,6 +19,10 @@ class LoginControllerImp extends LoginController {
   StatusRequest statusRequest = StatusRequest.none;
   MyServices myServices = Get.find();
   LoginData loginData = LoginData(Get.find());
+}
+
+class LoginControllerImp extends LoginController {
+  
   @override
   goToSignUp() {
     Get.offNamed(AppRoutes.kSignup);
