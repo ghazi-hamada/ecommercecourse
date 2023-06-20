@@ -12,7 +12,7 @@ dependencies:
   cloud_firestore: ^4.5.2
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
-  device_preview: ^1.1.0
+  # device_preview: ^1.1.0
   dropdown_search: ^5.0.6
   email_validator: ^2.1.17
   firebase_core: ^2.10.0
@@ -34,12 +34,12 @@ dependencies:
   http: ^0.13.4
   image_picker: ^0.8.7+4
   image_pickers: ^2.0.0+2
-  intl: ^0.17.0
+  intl: ^0.18.1
   jiffy: ^5.0.0
   lottie: ^2.3.2
   path: ^1.8.0
   qr_flutter: ^4.0.0
-  responsive_builder: ^0.6.4
+  # responsive_builder: ^0.6.4
   scan: ^1.6.0
   shared_preferences: ^2.0.15
   show_up_animation: ^2.0.0

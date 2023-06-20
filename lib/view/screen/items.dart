@@ -24,6 +24,7 @@ class Items extends StatelessWidget {
                       titleAppBar: "Search",
                     ),
                     const ListCategoriesItems(),
+                    
                     HandlingItems(
                       statusRequest: controller.statusRequest,
                       child: GridView.builder(

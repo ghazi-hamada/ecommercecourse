@@ -3,7 +3,6 @@ import 'package:ecommercecourse/bindings/intialbindings.dart';
 import 'package:ecommercecourse/core/localization/change_local.dart';
 import 'package:ecommercecourse/core/localization/translation.dart';
 import 'package:ecommercecourse/core/services/servises.dart';
-import 'package:ecommercecourse/view/screen/language.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
