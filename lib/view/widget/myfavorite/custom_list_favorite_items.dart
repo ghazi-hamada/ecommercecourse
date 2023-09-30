@@ -1,16 +1,16 @@
 import 'package:ecommercecourse/controller/favorite/favorite_controller.dart';
-import 'package:ecommercecourse/controller/items_controller.dart';
+import 'package:ecommercecourse/controller/favorite/myFavorite_controller.dart';
 import 'package:ecommercecourse/core/class/translate_database.dart';
 import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/data/model/items_model.dart';
+import 'package:ecommercecourse/data/model/my_favorite_model.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommercecourse/link_api.dart';
 import 'package:get/get.dart';
 
-class CustomListItems extends GetView<ItemsControllerImp> {
-  final ItemsModel itemsModel;
-  const CustomListItems({
+class CustomListFavoriteItems extends GetView<MyFavoriteController> {
+  final MyFavoriteModel itemsModel;
+  const CustomListFavoriteItems({
     super.key,
     required this.itemsModel,
   });
@@ -19,7 +19,7 @@ class CustomListItems extends GetView<ItemsControllerImp> {
   Widget build(BuildContext context) {
     Get.put(FavoriteController());
     return InkWell(
-      onTap: () => controller.goProductDetails(itemsModel),
+      onTap: () {},
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(10.00),
@@ -87,23 +87,12 @@ class CustomListItems extends GetView<ItemsControllerImp> {
                     ),
                   ),
                   const Spacer(),
-                  GetBuilder<FavoriteController>(
-                    builder: (controller) => IconButton(
-                        onPressed: () {
-                          controller.setFavorite(
-                              "${itemsModel.itemsId}", '0', itemsModel);
-                        },
-                        icon: Icon(
-                          controller.isFavorite["${itemsModel.itemsId}"] == '1'
-                              ? Icons.favorite
-                              : Icons.favorite_border,
-                          color:
-                              controller.isFavorite["${itemsModel.itemsId}"] ==
-                                      '1'
-                                  ? AppColor.primaryColor
-                                  : null,
-                        )),
-                  )
+                  IconButton(
+                      onPressed: () {
+                        controller.deleteFromFavorite(
+                            itemsModel.favoriteId.toString());
+                      },
+                      icon: const Icon(Icons.delete_outline_outlined))
                 ],
               )
             ],

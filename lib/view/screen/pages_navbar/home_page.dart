@@ -1,3 +1,4 @@
+import 'package:ecommercecourse/app_routes.dart';
 import 'package:ecommercecourse/controller/home_controller.dart';
 import 'package:ecommercecourse/core/class/handling_data_view.dart';
 import 'package:ecommercecourse/view/widget/home/custom_card_home.dart';
@@ -24,7 +25,10 @@ class HomePage extends StatelessWidget {
             children: [
               //textformfiled and icon nafiction in row
               CustumAppbar(
-                onTapIcon: () {},
+                onTapIconFav: () {
+                  Get.toNamed(AppRoutes.kMyFavorite);
+                },
+                onTapIconNoti: () {},
                 titleAppBar: "Search",
               ),
               // contianer for offers

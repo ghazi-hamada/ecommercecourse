@@ -11,7 +11,7 @@ class VerifyCodeSignupData {
   }) async {
     var response = await crud.postData(AppLink.verfiycodeSignup, {
       "email": email,
-      "verifcode": verifyCode,
+      "verifycode": verifyCode,
     });
     return Future.value(response.fold((l) => l, (r) => r));
   }

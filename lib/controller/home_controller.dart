@@ -3,7 +3,6 @@ import 'package:ecommercecourse/core/class/status_request.dart';
 import 'package:ecommercecourse/core/function/handlingData_controller.dart';
 import 'package:ecommercecourse/core/services/servises.dart';
 import 'package:ecommercecourse/data/datasource/remote/home_data.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class HomeController extends GetxController {
@@ -19,7 +18,7 @@ abstract class HomeController extends GetxController {
 class HomeControllerImp extends HomeController {
   StatusRequest statusRequest = StatusRequest.none;
   HomeData homeData = HomeData(Get.find());
-   bool lang =false;
+  bool lang = false;
   // List data = [];
   List categories = [];
   List items = [];
@@ -31,7 +30,7 @@ class HomeControllerImp extends HomeController {
   initialData() {
     username = myServices.sharedPreferences.getString('username');
     id = myServices.sharedPreferences.getString('id');
-   lang= myServices.sharedPreferences.getString("lang") == "ar";
+    lang = myServices.sharedPreferences.getString("lang") == "ar";
     update();
   }
 

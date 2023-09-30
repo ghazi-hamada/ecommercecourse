@@ -62,10 +62,10 @@ class MyTranslations extends Translations {
           "48": "الاصناف",
           "49": "المنتجات",
           "50": "تقدم لك",
-          "51":"الرئيسية",
-          "52":"المفضلة",
-          "53":"شخص",
-          "54":"الاعدادات",
+          "51": "الرئيسية",
+          "52": "المفضلة",
+          "53": "شخص",
+          "54": "الاعدادات",
         },
 
         //translation Englash
@@ -129,10 +129,10 @@ class MyTranslations extends Translations {
           "48": "Categories",
           "49": "Product for you",
           "50": "Offer for you",
-          "51":"Home",
-          "52":"favorite",
-          "53":"person",
-          "54":"setting",
+          "51": "Home",
+          "52": "favorite",
+          "53": "person",
+          "54": "setting",
         },
       };
 }

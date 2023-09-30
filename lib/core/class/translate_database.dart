@@ -7,11 +7,8 @@ translateDatabase({
 }) {
   MyServices myServices = Get.find();
   if (myServices.sharedPreferences.getString("lang") == "ar") {
-    
     return arabic;
   } else {
     return english;
-  
-    
   }
 }

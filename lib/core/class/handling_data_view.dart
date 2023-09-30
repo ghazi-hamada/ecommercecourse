@@ -11,7 +11,6 @@ class HandlingDataView extends StatelessWidget {
   final Widget child;
   @override
   Widget build(BuildContext context) {
-    print(statusRequest);
     if (statusRequest == StatusRequest.loading) {
       return Center(
         child: Lottie.asset(AppImageAsset.loading, width: 255, height: 255),
@@ -43,7 +42,6 @@ class HandlingDataViewRequesst extends StatelessWidget {
   final Widget child;
   @override
   Widget build(BuildContext context) {
-    print(statusRequest);
     if (statusRequest == StatusRequest.loading) {
       return Center(
         child: Lottie.asset(AppImageAsset.loading, width: 255, height: 255),

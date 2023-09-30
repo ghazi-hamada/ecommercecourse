@@ -22,7 +22,6 @@ abstract class LoginController extends GetxController {
 }
 
 class LoginControllerImp extends LoginController {
-  
   @override
   goToSignUp() {
     Get.offNamed(AppRoutes.kSignup);
@@ -76,9 +75,7 @@ class LoginControllerImp extends LoginController {
 
   @override
   void onInit() {
-    FirebaseMessaging.instance.getToken().then((value) {
-      print("==================================== $value");
-    });
+    FirebaseMessaging.instance.getToken().then((value) {});
     email = TextEditingController();
     password = TextEditingController();
     super.onInit();

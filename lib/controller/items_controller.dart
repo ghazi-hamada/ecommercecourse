@@ -1,6 +1,7 @@
 import 'package:ecommercecourse/app_routes.dart';
 import 'package:ecommercecourse/core/class/status_request.dart';
 import 'package:ecommercecourse/core/function/handlingData_controller.dart';
+import 'package:ecommercecourse/core/services/servises.dart';
 import 'package:ecommercecourse/data/datasource/remote/items_data.dart';
 import 'package:ecommercecourse/data/model/items_model.dart';
 import 'package:get/get.dart';
@@ -10,7 +11,7 @@ abstract class ItemsController extends GetxController {
   initialData();
   changeIndex(int index, String id);
   getItems(String categoriesid);
-  changLike();
+  changeLike();
   goProductDetails(ItemsModel itemsModel);
   //parameters
   bool isLike = false;
@@ -19,6 +20,7 @@ abstract class ItemsController extends GetxController {
   String? categoriesid;
   int? index;
   ItemsData itemsDate = ItemsData(Get.find());
+  MyServices myServices = Get.find();
   StatusRequest statusRequest = StatusRequest.none;
 }
 
@@ -48,9 +50,13 @@ class ItemsControllerImp extends ItemsController {
 
   @override
   getItems(categoriesid) async {
+    items.clear();
     statusRequest = StatusRequest.loading;
     update();
-    var response = await itemsDate.getData(id: categoriesid);
+    var response = await itemsDate.getData(
+      id: categoriesid,
+      userId: myServices.sharedPreferences.getString('id')!,
+    );
     statusRequest = handlingData(response);
     if (StatusRequest.success == statusRequest) {
       if (response['status'] == "success") {
@@ -64,7 +70,7 @@ class ItemsControllerImp extends ItemsController {
   }
 
   @override
-  changLike() {
+  changeLike() {
     isLike = !isLike;
     update();
   }

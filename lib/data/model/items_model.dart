@@ -18,6 +18,7 @@ class ItemsModel {
   String? categoriesNameAr;
   String? categoriesImage;
   String? categoriesDatetime;
+  int? favorite;
 
   ItemsModel({
     this.itemsId,
@@ -37,6 +38,7 @@ class ItemsModel {
     this.categoriesNameAr,
     this.categoriesImage,
     this.categoriesDatetime,
+    this.favorite,
   });
 
   factory ItemsModel.fromJson(Map<String, dynamic> json) => ItemsModel(
@@ -57,6 +59,7 @@ class ItemsModel {
         categoriesNameAr: json['categories_name_ar'] as String?,
         categoriesImage: json['categories_image'] as String?,
         categoriesDatetime: json['categories_datetime'] as String?,
+        favorite: json['favorite'] as int?,
       );
 
   Map<String, dynamic> toJson() => {
@@ -77,6 +80,7 @@ class ItemsModel {
         'categories_name_ar': categoriesNameAr,
         'categories_image': categoriesImage,
         'categories_datetime': categoriesDatetime,
+        'favorite': favorite,
       };
 
   @override
@@ -105,5 +109,6 @@ class ItemsModel {
       categoriesName.hashCode ^
       categoriesNameAr.hashCode ^
       categoriesImage.hashCode ^
+      favorite.hashCode ^
       categoriesDatetime.hashCode;
 }

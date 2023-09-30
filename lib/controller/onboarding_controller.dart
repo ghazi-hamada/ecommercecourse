@@ -25,7 +25,6 @@ class OnBoardingControllerImp extends OnBoardingController {
     currentIndex++;
     if (currentIndex > onBoardingData.length - 1) {
       myServices.sharedPreferences.setString('step', '1');
-      print('object');
       Get.offAllNamed(AppRoutes.kLogin);
     } else {
       pageController.animateToPage(currentIndex,

@@ -41,7 +41,6 @@ class verifyCodeSignUpControllerImp extends verifyCodeSignUpController {
   @override
   void onInit() {
     email = Get.arguments['email'];
-    print("==================================== email $email");
     super.onInit();
   }
 

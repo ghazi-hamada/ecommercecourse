@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:ecommercecourse/controller/favorite/favorite_controller.dart';
 import 'package:ecommercecourse/controller/items_controller.dart';
 import 'package:ecommercecourse/core/class/handling_data_view.dart';
 import 'package:ecommercecourse/data/model/items_model.dart';
@@ -13,6 +16,7 @@ class Items extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Get.put(ItemsControllerImp());
+    FavoriteController controllerFvr = Get.put(FavoriteController());
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -20,11 +24,11 @@ class Items extends StatelessWidget {
             builder: (controller) => ListView(
                   children: [
                     CustumAppbar(
-                      onTapIcon: () {},
+                      onTapIconFav: () {},
+                      onTapIconNoti: () {},
                       titleAppBar: "Search",
                     ),
                     const ListCategoriesItems(),
-                    
                     HandlingItems(
                       statusRequest: controller.statusRequest,
                       child: GridView.builder(
@@ -35,6 +39,13 @@ class Items extends StatelessWidget {
                               const SliverGridDelegateWithFixedCrossAxisCount(
                                   crossAxisCount: 2, childAspectRatio: 0.7),
                           itemBuilder: (context, index) {
+                            log("${controller.items[index]['items_id']}");
+
+                            controllerFvr.isFavorite.addIf(
+                                1 == 1,
+                                "${controller.items[index]['items_id']}",
+                                "${controller.items[index]['favorite']}");
+
                             return CustomListItems(
                                 itemsModel: ItemsModel.fromJson(
                                     controller.items[index]));

@@ -1,9 +1,9 @@
 class AppLink {
   //======================server======================
-  static const String server = 'https://ghazihamada.tech/ecommerce';
+  static const String server = 'https://appghazi.tech/ecommerce';
 
   //======================image======================
-  static const String imageStatic = 'https://ghazihamada.tech/ecommerce/upload';
+  static const String imageStatic = 'https://appghazi.tech/ecommerce/upload';
   static const String imagecategories = '$imageStatic/categories';
   static const String imageItems = '$imageStatic/items';
 
@@ -25,4 +25,10 @@ class AppLink {
   //======================Home=================================
   static const String homepage = '$server/home.php';
   static const String items = '$server/items/items.php';
+
+  //======================favorite=================================
+  static const String favoriteAdd = '$server/favorite/add.php';
+  static const String favoriteRemove = '$server/favorite/remove.php';
+  static const String favoriteView = '$server/favorite/view.php';
+  static const String deletefromfavorite = '$server/favorite/deletefromfavorite.php';
 }

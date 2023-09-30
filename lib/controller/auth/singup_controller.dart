@@ -37,9 +37,7 @@ class SingupControllerImp extends SingupController {
         email.text,
         phone.text,
       );
-      print("=============================== response $response ");
       statusRequest = handlingData(response);
-      print("=============================== statusRequest $statusRequest ");
       if (StatusRequest.success == statusRequest) {
         if (response['status'] == "success") {
           // data.addAll(response['data']);

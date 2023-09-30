@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 class CustumAppbar extends StatelessWidget {
   final String titleAppBar;
-  final void Function() onTapIcon;
+  final void Function() onTapIconNoti;
+  final void Function() onTapIconFav;
   const CustumAppbar({
     super.key,
     required this.titleAppBar,
-    required this.onTapIcon,
+    required this.onTapIconNoti,
+    required this.onTapIconFav,
   });
 
   @override
@@ -32,8 +34,15 @@ class CustumAppbar extends StatelessWidget {
           child: IconButton(
               icon: const Icon(Icons.notifications_active_outlined),
               color: Colors.grey[700],
-              onPressed: onTapIcon),
-        )
+              onPressed: onTapIconNoti),
+        ),
+        Container(
+          margin: const EdgeInsets.only(right: 10, top: 20),
+          child: IconButton(
+              icon: const Icon(Icons.favorite_border_outlined),
+              color: Colors.grey[700],
+              onPressed: onTapIconFav),
+        ),
       ],
     );
   }

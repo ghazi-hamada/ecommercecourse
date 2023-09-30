@@ -1,7 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ecommercecourse/controller/productDetails_controller.dart';
-import 'package:ecommercecourse/core/constant/color.dart';
-import 'package:ecommercecourse/link_api.dart';
+import 'package:ecommercecourse/view/widget/product_detaails/bottomNavigationBar_widget.dart';
+import 'package:ecommercecourse/view/widget/product_detaails/color_widget.dart';
+import 'package:ecommercecourse/view/widget/product_detaails/details_image.dart';
+import 'package:ecommercecourse/view/widget/product_detaails/title_body_details_product.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,34 +13,35 @@ class ProductDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(ProductDetailsControllerImpl());
     return Scaffold(
+      bottomNavigationBar: bottomNavigationBarWidget(),
       body: ListView(
         children: [
-          Stack(
-            clipBehavior: Clip.none,
-            children: [
-              Container(
-                height: 200,
-                decoration: const BoxDecoration(
-                    color: AppColor.primaryColor,
-                    borderRadius:
-                        BorderRadius.vertical(bottom: Radius.circular(20))),
-              ),
-              Positioned(
-                top: 50,
-                right: Get.width / 20,
-                left: Get.width / 20,
-                child: Hero(
-                  tag: controller.itemsModel.itemsId.toString(),
-                  child: CachedNetworkImage(
-                    imageUrl:
-                        "${AppLink.imageItems}/${controller.itemsModel.itemsImage!}",
-                    height: 250,
-                    fit: BoxFit.fill,
-                    width: Get.width,
-                  ),
-                ),
-              ),
-            ],
+          DetailsImage(controller),
+          const SizedBox(height: 100),
+          TitleBodyDetailsProduct(controller, context),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: Get.width / 20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text("Color",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black)),
+                const SizedBox(height: 10),
+                Row(
+                  children: [
+                    ...List.generate(
+                        controller.subItems.length,
+                        (index) => colorWidget(
+                              active: controller.subItems[index]['active'],
+                              text: controller.subItems[index]['name'],
+                            ))
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),

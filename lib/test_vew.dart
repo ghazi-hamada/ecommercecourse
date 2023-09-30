@@ -11,9 +11,7 @@ class TestVew extends StatelessWidget {
     Get.put(TestController());
     return Scaffold(
       body: Column(
-        children: const [
-          
-        ],
+        children: const [],
       ),
     );
   }

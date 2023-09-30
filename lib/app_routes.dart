@@ -8,6 +8,7 @@ import 'package:ecommercecourse/view/screen/auth/success_signup.dart';
 import 'package:ecommercecourse/view/screen/auth/verfiy_code.dart';
 import 'package:ecommercecourse/view/screen/auth/verifycodesignup.dart';
 import 'package:ecommercecourse/view/screen/items.dart';
+import 'package:ecommercecourse/view/screen/my_favorite.dart';
 import 'package:ecommercecourse/view/screen/pages_navbar/navbar_botton.dart';
 import 'package:ecommercecourse/view/screen/language.dart';
 import 'package:ecommercecourse/view/screen/onboarding.dart';
@@ -29,6 +30,7 @@ abstract class AppRoutes {
   static const String kLanguage = '/';
   static const String kItems = '/items';
   static const String kProductDetails = '/productDetails';
+  static const String kMyFavorite = '/MyFavorite';
 
   // this is the routes list
   static List<GetPage<dynamic>> getPages = [
@@ -50,6 +52,6 @@ abstract class AppRoutes {
     GetPage(name: knavbarButton, page: () => const NavbarButton()),
     GetPage(name: kItems, page: () => const Items()),
     GetPage(name: kProductDetails, page: () => const ProductDetails()),
-
+    GetPage(name: kMyFavorite, page: () => const MyFavorite()),
   ];
 }
